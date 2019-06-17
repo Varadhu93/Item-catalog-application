@@ -14,11 +14,11 @@ You will learn how to develop a RESTful web application using the Python framewo
 
 >### Pre-requisites
 
-* [Python2](https://www.python.org/)
+* [Python2 or Python3](https://www.python.org/)
 * [vagrant](https://www.vagrantup.com/)
 * [VirtualBox](https://www.virtualbox.org/)
-* Bootstrap
-* Jinja2
+* [Bootstrap] (https://getbootstrap.com/docs/4.3/getting-started/introduction/)
+* [Jinja2] (http://jinja.pocoo.org/)
 
 >### Tech Stack
 
@@ -54,7 +54,7 @@ Once inside the VM, navigate to the tournament directory with this command:
 
 * Run your application within the VM (python /vagrant/catalog/application.py)
 `$ python application.py`
-* Access and test your application by visiting http://localhost:8000 locally
+* Access and test your application by visiting http://localhost:8000 or http://localhost:8000/catalog
 * static - css, js files etc
 * templates - path to html files
 
