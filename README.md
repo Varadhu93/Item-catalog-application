@@ -17,8 +17,8 @@ You will learn how to develop a RESTful web application using the Python framewo
 * [Python2 or Python3](https://www.python.org/)
 * [vagrant](https://www.vagrantup.com/)
 * [VirtualBox](https://www.virtualbox.org/)
-* [Bootstrap] (https://getbootstrap.com/docs/4.3/getting-started/introduction/)
-* [Jinja2] (http://jinja.pocoo.org/)
+* [Bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/)
+* [Jinja2](http://jinja.pocoo.org/)
 
 >### Tech Stack
 
