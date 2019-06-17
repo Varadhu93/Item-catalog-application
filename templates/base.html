@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Font Awesome -->
+    <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">-->
+
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/font-awesome.css') }}">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Bootstrap core CSS -->
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <!-- Material Design Bootstrap -->
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/mdb.min.css') }}">
+
+    <link rel=stylesheet type=text/css
+        href="{{ url_for('static', filename='css/bootstrap-social-gh-pages/bootstrap-social.css') }}">
+    <!-- Custom styles for this template -->
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+
+    <script src="//apis.google.com/js/platform.js?onload=start"></script>
+
+    <title>Item Catalog Application</title>
+</head>
+
+<body>
+
+    <!-- Checking the current page -->
+    {% if currentPage == 'catalog' or currentPage == 'catalogitem' or currentPage =='login'%}
+    {% block maincontainer %}
+    {% endblock %}
+    {% endif %}
+
+    {% if currentPage == 'catalogiteminfo' or currentPage == 'editcatalogitem' or currentPage == 'newcatalog' or currentPage == 'editcatalog' or currentPage == 'deletecatalog' or currentPage == 'newcatalogitem' %}
+    {% block card %}
+    {% endblock %}
+    {% endif %}
+
+    <!-- Footer -->
+    <footer class="page-footer font-small blue">
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2019 Copyright:
+            <a href="mailto:varadhu93amrita@gmail.com">Mail to me</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/mdb.min.js') }}"></script>
+
+</body>
+
+</html>

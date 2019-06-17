@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block maincontainer %}
+{% include 'navbar.html' %}
+
+<main role="main" class="container">
+  <div class="my-2 p-3 bg-white rounded shadow">
+    <div class="row">
+      <div class="col-lg-4">
+        <h2 class="border-bottom border-gray pb-2 mb-0">
+          <b>Categories</b>
+        </h2>
+        {% if 'username' in session %}
+        <p><a href="{{url_for('newCatalog')}}">
+            <h5><strong>Add Category</strong></h5>
+          </a></p>
+        {% endif %}
+
+        {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+        <div class="alert alert-info alert-dismissable">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Info!</strong> {{message}}.
+        </div>
+        {% endfor %} {% endif %} {% endwith %}
+
+        <table>
+          <thead></thead>
+          <tbody></tbody>
+          <p class="media-body pb-4 mb-0 small lh-125">
+            {% for catalog in catalogs %}
+            <div>
+              <tr>
+                <td><a href="{{url_for('showCatalogItems', catalog_id = catalog.id)}}"
+                    class="list-group-item list-group-item-action">
+                    <h5><strong>{{catalog.name}}</strong></h5>
+                  </a></td>
+                {% if 'username' in session %}
+                <td><a href="{{url_for('editCatalog', catalog_id = catalog.id)}}"
+                    class="list-group-item list-group-item-action" title="Edit"><i
+                      class="material-icons">&#xE254;</i></a></td>
+                <td><a href="{{url_for('deleteCatalog', catalog_id = catalog.id)}}"
+                    class="list-group-item list-group-item-action" title="Delete"><i
+                      class="material-icons">&#xE872;</i></a></td>
+                {% endif %}
+              </tr>
+            </div>
+            {% endfor %}
+          </p>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-lg-8">
+        {% if currentPage == 'catalog' %}
+        <h2 class="border-bottom border-gray pb-2 mb-0">
+          <b>Latest Items</b>
+        </h2>
+        {% if 'username' in session %}
+        <p><a href="{{url_for('newItem')}}">
+            <h5><strong>Add Item</strong></h5>
+          </a>
+        </p>
+        {% endif %}
+        <p>
+          {% for item in items %}
+          <a href="{{url_for('showCatalogItemInfo', catalog_id = item[1].id, item_id = item[0].id)}}"
+            class="list-group-item list-group-item-action"><strong>{{item[0].title}}</strong><i
+              class="ml-2">({{item[1].name}})</i></a>
+          {% endfor %}
+        </p>
+
+        {% else %}
+        {% block container %}
+        {% endblock %}
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

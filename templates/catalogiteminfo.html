@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block card %}
+{% include 'navbar.html' %}
+<main role="main" class="container">
+
+    {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+    <div class="alert alert-info alert-dismissable">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Info!</strong> {{message}}.
+    </div>
+    {% endfor %} {% endif %} {% endwith %}
+
+    <div class="card my-3 p-3 bg-white rounded shadow-sm">
+        <div class="card-header">
+            {{item.title}}
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p>{{item.description}}.</p>
+            </blockquote>
+        </div>
+        <p>
+            <a href="{{url_for('editCatalogItem', catalog_id = catalog.id, item_id=item.id)}}">Edit</a>
+            <label>|</label>
+            <a href="" data-toggle="modal" data-target="#deleteItem">Delete</a>
+        </p>
+    </div>
+
+    <!-- Modal -->
+    <form action="{{ url_for('deleteCatalogItem', catalog_id = catalog.id, item_id=item.id)}}" method='post'>
+        <div class="modal fade" id="deleteItem" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to delete?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" value="Yes" class="btn btn-default"></input>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</main>
+
+{% endblock %}

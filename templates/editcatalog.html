@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block card %}
+{% include 'navbar.html' %}
+<main role="main" class="container">
+        <div class="card my-3 p-3 bg-white rounded shadow-sm">
+            <!-- Default form contact -->           
+            <form class="text-center border border-light p-5"  action = "{{url_for('editCatalog', catalog_id=catalog.id)}}"
+                    method = "post">
+
+                    <p class="h4 mb-4">Edit Catalog</p>
+                
+                    <!-- Name -->
+                    <input type="text" name='name'  class="form-control mb-4" placeholder="{{catalog.name}}">
+                                              
+                    <!-- Save and Cancel button -->
+                    <input class="btn btn-info btn-block" type="submit" value="Save"></input>
+                    <a href="{{url_for('showCatalogApp')}}">
+                            <button type="button" class="btn btn-info">Cancel</button>
+                    </a>    
+            </form>
+            <!-- Default form contact -->
+        </div>    
+</main>
+{% endblock %}

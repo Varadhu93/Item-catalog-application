@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block card %}
+{% include 'navbar.html' %}
+<main role="main" class="container">
+    <div class="card my-3 p-3 bg-white rounded shadow-sm">
+        <!-- Default form contact -->
+        <form class="text-center border border-light p-5" action="{{url_for('newItem')}}" method="post">
+
+            <p class="h4 mb-4">Add New Item</p>
+
+            <!-- Title -->
+            <input type="text" name='title' class="form-control mb-4" placeholder="Name">
+
+            <!-- Category -->
+            <p class="h4 mb-4">Category</p>
+            <select name='category' class="browser-default custom-select mb-4">
+                <option value="" disabled>Choose option</option>
+                {% for catalog in catalogs %}
+                <option value="{{catalog.name}}">{{catalog.name}}</option>
+                {% endfor %}
+            </select>
+
+            <!-- Description -->
+            <div class="form-group">
+                <textarea class="form-control rounded-0" name='description' rows="3"
+                    placeholder="Description"></textarea>
+            </div>
+
+            <!-- Submit button -->
+            <input class="btn btn-info btn-block" type="submit" value="Submit"></input>
+            <a href="{{url_for('showCatalogApp')}}">
+                <button type="button" class="btn btn-info">Cancel</button>
+            </a>
+        </form>
+        <!-- Default form contact -->
+    </div>
+</main>
+{% endblock %}
