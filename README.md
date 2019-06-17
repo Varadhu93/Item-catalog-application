@@ -55,6 +55,7 @@ Once inside the VM, navigate to the tournament directory with this command:
 * Run your application within the VM (python /vagrant/catalog/application.py)
 `$ python application.py`
 * Access and test your application by visiting http://localhost:8000 or http://localhost:8000/catalog
+* JSON endpoints - http://localhost:8000/catalog/JSON and for catalog items by http://localhost:8000/catalog/{catalog_id}/{item_id}/JSON
 * static - css, js files etc
 * templates - path to html files
 
