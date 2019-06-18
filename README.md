@@ -66,6 +66,6 @@ You will learn how to develop a RESTful web application using the Python framewo
 
 ### Shutting the VM down
 
-When you are finished with the VM, press Ctrl-D to log out of it and shut it down with this command:
+* When you are finished with the VM, press Ctrl-D to log out of it and shut it down with this command:
 
 `vagrant halt`
