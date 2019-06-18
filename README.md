@@ -39,15 +39,15 @@ You will learn how to develop a RESTful web application using the Python framewo
 
 ### Bringing the VM up
 
-Bring up the VM with the following command:
+* Bring up the VM with the following command:
 `vagrant up`
 
-The first time you run this command, it will take awhile, as Vagrant needs to download the VM image.
+* The first time you run this command, it will take awhile, as Vagrant needs to download the VM image.
 
-You can then log into the VM with the following command:
+* You can then log into the VM with the following command:
 `vagrant ssh`
 
-Once inside the VM, navigate to the tournament directory with this command:
+* Once inside the VM, navigate to the tournament directory with this command:
 `cd /vagrant`
 
 * Write your Flask application locally in the vagrant/catalog directory (which will automatically be synced to /vagrant/catalog within the VM).
