@@ -9,7 +9,7 @@ gunicorn==19.7.1
 html5lib==1.0b10
 idna==2.5
 itsdangerous==0.24
-Jinja2==2.9.6
+Jinja2==2.11.3
 MarkupSafe==1.0
 pep8==1.7.1
 psycopg2==2.7.3.2
